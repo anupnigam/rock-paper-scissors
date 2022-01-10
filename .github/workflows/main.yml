@@ -5,6 +5,8 @@ on:
   # Triggers the workflow on push request events but only for the master branch
   pull_request:
     branches: [ master ]
+  push:
+    branches: [master]
 
   # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,7 +27,7 @@ jobs:
         with:
           java-version: 1.8
           
-      - name: Step9- java version
+      - name: Step3-  To check if stated version in Step2 has been installed or not .
         run: java -version
         
 
