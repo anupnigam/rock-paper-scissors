@@ -24,6 +24,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+          
+      - name: Step9- java version
+        run: java --version
+        
 
       - name: Step3- have github actions Build Maven Project
         run: mvn -B package --file pom.xml
