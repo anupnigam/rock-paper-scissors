@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 1.8
+          distribution: 'adopt'
           
       - name: Step3-  To check if stated version in Step2 has been installed or not .
         run: java -version
@@ -54,8 +55,14 @@ jobs:
         with:
            name: github-actions-artifact
            path: staging
+       
+      - name: Step7 -Set up Java for publishing to GitHub Packages
+        uses: actions/setup-java@v2
+        with:
+           java-version: 1.8
+           distribution: 'adopt'
            
-      - name: Step7- Publish Package
+      - name: Step8- Publish Package
         run: mvn --batch-mode deploy
         env: 
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
